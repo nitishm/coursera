@@ -63,13 +63,6 @@ body{
     color: #000000;
 }
 
-.checkbox-inline {
-    color: #fff;
-}
-.form-group .has-feedback > .control-label {
-    text-align: right;
-}
-
 .tab-content {
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
