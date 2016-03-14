@@ -1,2 +1,5 @@
 /AngularJS/conFusion/node_modules/
 /AngularJS/conFusion/bower_components/
+/AngularJS/conFusion/dist/
+/AngularJS/conFusion/npm-debug.log
+/AngularJS/conFusion/.tmp/
