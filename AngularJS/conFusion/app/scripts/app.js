@@ -72,7 +72,6 @@ angular.module('confusionApp', [])
                 $scope.showDetails = !$scope.showDetails;
             };
         }])
-
         .controller('ContactController', ['$scope', function($scope) {
 
             $scope.feedback = {mychannel:"", firstName:"", lastName:"", agree:false, email:"" };
@@ -90,7 +89,7 @@ angular.module('confusionApp', [])
 
                 console.log($scope.feedback);
 
-                if ($scope.feedback.agree && ($scope.feedback.mychannel == "")) {
+                if ($scope.feedback.agree && ($scope.feedback.mychannel === "")) {
                     $scope.invalidChannelSelection = true;
                     console.log('incorrect');
                 }
@@ -152,22 +151,15 @@ angular.module('confusionApp', [])
 
         }])
         .controller('DishCommentController', ['$scope', function($scope) {
-
-            //Step 1: Create a JavaScript object to hold the comment from the form
             $scope.rating = 5;
             $scope.submitComment = function () {
-                //Step 2: This is how you record the date
-//                "The date property of your JavaScript object holding the comment" = new Date().toISOString();
-                console.log($scope.userName);
-                $scope.dish.comments.push({'rating':$scope.rating,
+                $scope.dish.comments.push({'rating':parseInt($scope.rating),
                                            'comment':$scope.comment,
                                            'author':$scope.userName,
                                            'date':new Date().toISOString()});
-                $scope.userName = ""
+                $scope.userName = "";
                 $scope.comment = "";
                 $scope.rating = 5;
                 $scope.commentForm.$setPristine();
-            }
-        }])
-
-;
+            };
+        }]);

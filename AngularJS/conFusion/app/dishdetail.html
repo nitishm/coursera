@@ -9,11 +9,13 @@
 content must come *after* these tags -->
     <title>Ristorante Con Fusion: Menu</title>
     <!-- Bootstrap -->
+    <!-- build:css styles/main.css -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="styles/bootstrap-social.css" rel="stylesheet">
     <link href="styles/mystyles.css" rel="stylesheet">
+    <!-- endbuild -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,7 +26,6 @@ content must come *after* these tags -->
 </head>
 
 <body>
-
     <div class="container" ng-controller="DishDetailController">
         <div class="row row-content">
             <div class="col-xs-12">
@@ -71,20 +72,8 @@ content must come *after* these tags -->
                         <div class="form-group">
                             <label for="guests" class="col-sm-2 control-label text-nowrap">Number of Stars</label>
                             <div class="col-sm-10">
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio" ng-checked="rating === 1"> 1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio" ng-checked="rating === 2"> 2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio" ng-checked="rating === 3"> 3
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio" ng-checked="rating === 4"> 4
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio" ng-checked="rating === 5"> 5
+                                <label class="radio-inline" ng-repeat="id in [1,2,3,4,5]">
+                                    <input type="radio" name="optradio" ng-model="$parent.rating" value="{{id}}" ng-checked="$parent.rating === id">{{id}}
                                 </label>
                             </div>
                         </div>
@@ -105,7 +94,9 @@ content must come *after* these tags -->
                 </div>
             </div>
         </div>
+        <!-- build:js scripts/main.js -->
         <script src="../bower_components/angular/angular.min.js"></script>
         <script src="scripts/app.js"></script>
+        <!-- endbuild -->
     </body>
 </html>
