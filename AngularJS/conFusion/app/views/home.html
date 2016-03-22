@@ -9,7 +9,7 @@
                 <ul class="media-list">
                     <li class="media">
                         <div class="media-left media-middle">
-                            <a ui-sref="">
+                            <a ui-sref="app.dishdetails({id: featuredDish._id})">
                                 <img class="media-object img-thumbnail"
                                 ng-src={{featuredDish.image}} alt="{{featuredDish.name}}">
                             </a>
@@ -24,7 +24,6 @@
                 </ul>
             </div>
         </div>
-
 
         <div class="row row-content">
             <div class="col-xs-12 col-sm-3">
@@ -60,7 +59,7 @@
 				<ul class="media-list">
                     <li class="media">
                         <div class="media-left media-middle">
-                            <a ui-sref="">
+                            <a ui-sref="app.aboutus">
                                 <img class="media-object img-thumbnail"
                                 ng-src={{execChef.image}} alt="{{execChef.name}}">
                             </a>
