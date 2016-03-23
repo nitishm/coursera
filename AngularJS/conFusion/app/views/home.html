@@ -9,7 +9,7 @@
                 <ul class="media-list">
                     <li class="media">
                         <div class="media-left media-middle">
-                            <a ui-sref="app.dishdetails({id: featuredDish._id})">
+                            <a ui-sref="app.dishdetails({id: featuredDish.id})">
                                 <img class="media-object img-thumbnail"
                                 ng-src={{featuredDish.image}} alt="{{featuredDish.name}}">
                             </a>
@@ -65,7 +65,7 @@
                             </a>
                         </div>
                         <div class="media-body">
-                            <h2 class="media-heading">{{execChef.name}}<h4>{{execChef.designation}}</h4></h2>
+                            <h2 class="media-heading">{{execChef.name}}<small>{{execChef.designation}}</small></h2>
                             <p>{{execChef.description}}</p>
                         </div>
                     </li>
